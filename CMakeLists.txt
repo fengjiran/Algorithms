@@ -3,4 +3,4 @@ project(Algorithms)
 
 set(CMAKE_CXX_STANDARD 14)
 
-add_executable(Algorithms main.cpp)
+add_executable(Algorithms main.cpp src/Search/BinarySearch/binary_search.cpp)
