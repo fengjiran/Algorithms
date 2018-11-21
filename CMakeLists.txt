@@ -6,4 +6,5 @@ set(CMAKE_CXX_STANDARD 14)
 add_executable(Algorithms
         main.cpp
         src/Search/BinarySearch/binary_search.cpp
-        header/catch.hpp)
+        header/catch.hpp
+        header/algorithms.h)
