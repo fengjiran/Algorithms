@@ -10,8 +10,8 @@ TEST_CASE("Binary Search test") {
     SECTION("Test origin function.") {
         int a[] = {2, 3, 3, 3, 3, 4, 5};
         int len = sizeof(a) / sizeof(a[0]);
-        REQUIRE(binarySearch(a, len, 3) == 3);
-        REQUIRE(binarySearchFirst(a, len, 3) == 1);
+        REQUIRE(binarySearch(a, len, 6) == -1);
+        REQUIRE(binarySearchFirst(a, len, 1) == -1);
         REQUIRE(binarySearchLast(a, len, 3) == 4);
     }
 
