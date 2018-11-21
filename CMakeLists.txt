@@ -7,4 +7,4 @@ add_executable(Algorithms
         main.cpp
         src/Search/BinarySearch/binary_search.cpp
         header/catch.hpp
-        header/algorithms.h)
+        header/algorithms.h test/test_binary_search.cpp)
