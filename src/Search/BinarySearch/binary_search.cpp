@@ -90,7 +90,7 @@ vector<int>::difference_type binarySearchSTL(const vector<int> &a, int key) {
         return -1;
 
     auto iter_beg = a.begin();
-    auto iter_end = a.end();
+    auto iter_end = a.end() - 1;
     vector<int>::const_iterator iter_mid;
 
     while (iter_beg <= iter_end) {
