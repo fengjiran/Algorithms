@@ -15,4 +15,9 @@ TEST_CASE("Binary Search test") {
         REQUIRE(binarySearchLast(a, len, 3) == 4);
     }
 
+    SECTION("Test STL function") {
+        vector<int> a = {2, 3, 3, 3, 3, 4, 5};
+        REQUIRE(binarySearchSTL(a, 2) == 0);
+    }
+
 }
