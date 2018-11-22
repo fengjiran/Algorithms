@@ -2,6 +2,10 @@
 // Created by Richard on 2018/11/20.
 //
 
+#include <vector>
+
+using std::vector;
+
 // 假设数组是递增序列
 // 一般情况下的二分查找，经典的二分查找
 // 没有考虑数组中具有多个重复的key的情况
@@ -78,4 +82,27 @@ int binarySearchLast(const int array[], int len, int key) {
         }
     }
     return -1;
+}
+
+// STL style, use container and iterator
+vector<int>::difference_type binarySearchSTL(const vector<int> &a, int key) {
+    if (a.begin() == a.end())
+        return -1;
+
+    auto iter_beg = a.begin();
+    auto iter_end = a.end();
+    vector<int>::const_iterator iter_mid;
+
+    while (iter_beg <= iter_end) {
+        iter_mid = iter_beg + (iter_end - iter_beg - 1) / 2;
+        if (key < *iter_mid)
+            iter_end = iter_mid - 1;
+        else if (key > *iter_mid)
+            iter_beg = iter_mid + 1;
+        else
+            return iter_mid - a.begin();
+    }
+
+    return -1;
+
 }
