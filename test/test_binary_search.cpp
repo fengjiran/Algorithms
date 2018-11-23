@@ -20,12 +20,13 @@ TEST_CASE("Binary Search test") {
     }
 
     SECTION("Test STL function") {
-        vector<int> a = {2, 3, 3, 3, 3, 4, 5};
+        vector<int> a = {2};
         auto beg = a.begin() - 1;
         auto end = a.end() + 2;
         cout << *beg << endl;
         cout << *end << endl;
-        REQUIRE(binarySearchSTL(a, 2) == 0);
+        cout << end - beg << endl;
+        REQUIRE(binarySearchSTL(a, 3) == -1);
     }
 
 }
