@@ -26,6 +26,8 @@ public:
     explicit Vector(int c = DEFAULT_CAPACITY, int s = 0, T v = 0);
 
     Rank size() const;
+
+    Vector<T> &operator=(const Vector<T> &V);
 };
 
 template<typename T>
