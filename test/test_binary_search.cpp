@@ -28,6 +28,7 @@ TEST_CASE("Binary Search test") {
 //        cout << end - beg << endl;
         REQUIRE(binarySearchSTL(a, 3) == 3);
         REQUIRE(binarySearchFirstSTL(a, 2) == 0);
+        REQUIRE(binarySearchLastSTL(a, 3) == 4);
     }
 
 }
