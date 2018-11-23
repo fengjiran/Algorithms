@@ -32,12 +32,21 @@ template<typename T>
 Vector<T>::Vector(int c, int s, T v):_capacity(c), _size(s) {
     _elem = new T[_capacity];
     for (int i = 0; i < _size; _elem[i++] = v);
-//    for (_size = 0; _size < s; _elem[_size++] = v);
+
 }
 
 template<typename T>
 Rank Vector<T>::size() const {
     return _size;
+}
+
+template<typename T>
+void Vector<T>::copyFrom(const T *A, Rank lo, Rank hi) {
+    _capacity = 2 * (hi - lo);
+    _size = 0;
+    _elem = new T[_capacity];
+    while (lo < hi)
+        _elem[_size++] = A[lo++];
 }
 
 #endif //ALGORITHMS_VECTOR_HPP
