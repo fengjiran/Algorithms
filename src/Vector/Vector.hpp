@@ -22,6 +22,22 @@ protected:
     bool bubble(Rank lo, Rank hi);  //
 
     void bubbleSort(Rank lo, Rank hi);  //
+public:
+    explicit Vector(int c = DEFAULT_CAPACITY, int s = 0, T v = 0);
+
+    Rank size() const;
 };
+
+template<typename T>
+Vector<T>::Vector(int c, int s, T v) {
+    _elem = new T[_capacity = c];
+    for (T &a:_elem)
+        a = v;
+}
+
+template<typename T>
+Rank Vector<T>::size() const {
+    return _size;
+}
 
 #endif //ALGORITHMS_VECTOR_HPP
