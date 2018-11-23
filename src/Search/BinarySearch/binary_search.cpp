@@ -1,9 +1,7 @@
 //
 // Created by Richard on 2018/11/20.
 //
-
 #include <vector>
-
 using std::vector;
 
 // 假设数组是递增序列

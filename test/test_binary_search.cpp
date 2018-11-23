@@ -2,9 +2,13 @@
 // Created by Richard on 2018/11/21.
 //
 #define CATCH_CONFIG_MAIN  // This tells Catch to provide a main() - only do this in one cpp file
+
+#include <iostream>
 #include "../header/catch.hpp"
 #include "../header/algorithms.h"
 
+using std::cout;
+using std::endl;
 
 TEST_CASE("Binary Search test") {
     SECTION("Test origin function.") {
@@ -16,8 +20,12 @@ TEST_CASE("Binary Search test") {
     }
 
     SECTION("Test STL function") {
-        vector<int> a;
-        REQUIRE(binarySearchSTL(a, 2) == -1);
+        vector<int> a = {2, 3, 3, 3, 3, 4, 5};
+        auto beg = a.begin() - 1;
+        auto end = a.end() + 2;
+        cout << *beg << endl;
+        cout << *end << endl;
+        REQUIRE(binarySearchSTL(a, 2) == 0);
     }
 
 }
