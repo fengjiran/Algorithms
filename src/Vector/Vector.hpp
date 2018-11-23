@@ -25,7 +25,7 @@ protected:
 public:
     explicit Vector(int c = DEFAULT_CAPACITY, int s = 0, T v = 0);
 
-    inline ~Vector() {delete [] _elem;}
+    inline ~Vector() { delete[] _elem; }
 
     Rank size() const;
 
@@ -67,7 +67,17 @@ Vector<T> &Vector<T>::operator=(const Vector<T> &V) {
 
 template<typename T>
 void Vector<T>::expand() {
+    if (_size < _capacity)
+        return;
+    if (_capacity < DEFAULT_CAPACITY)
+        _capacity = DEFAULT_CAPACITY;
 
+    T *oldElem = _elem;
+    _capacity = _capacity << 1;
+    _elem = new T[_capacity];
+    for (int i = 0; i < _size; i++)
+        _elem[i] = oldElem[i];
+    delete[] oldElem;
 }
 
 #endif //ALGORITHMS_VECTOR_HPP
