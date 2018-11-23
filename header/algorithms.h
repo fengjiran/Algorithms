@@ -16,4 +16,8 @@ int binarySearchLast(const int array[], int len, int key);
 
 vector<int>::difference_type binarySearchSTL(const vector<int> &a, int key);
 
+vector<int>::difference_type binarySearchFirstSTL(const vector<int> &a, int key);
+
+vector<int>::difference_type binarySearchLastSTL(const vector<int> &a, int key);
+
 #endif //ALGORITHMS_ALGORITHMS_H
