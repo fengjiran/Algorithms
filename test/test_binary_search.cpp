@@ -16,8 +16,8 @@ TEST_CASE("Binary Search test") {
     }
 
     SECTION("Test STL function") {
-        vector<int> a = {2};
-        REQUIRE(binarySearchSTL(a, 2) == 0);
+        vector<int> a;
+        REQUIRE(binarySearchSTL(a, 2) == -1);
     }
 
 }
