@@ -29,10 +29,10 @@ public:
 };
 
 template<typename T>
-Vector<T>::Vector(int c, int s, T v) {
-    _elem = new T[_capacity = c];
-    for (T &a:_elem)
-        a = v;
+Vector<T>::Vector(int c, int s, T v):_capacity(c), _size(s) {
+    _elem = new T[_capacity];
+    for (int i = 0; i < _size; _elem[i++] = v);
+//    for (_size = 0; _size < s; _elem[_size++] = v);
 }
 
 template<typename T>
