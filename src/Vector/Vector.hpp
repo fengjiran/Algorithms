@@ -25,6 +25,8 @@ protected:
 public:
     explicit Vector(int c = DEFAULT_CAPACITY, int s = 0, T v = 0);
 
+    inline ~Vector() {delete [] _elem;}
+
     Rank size() const;
 
     Vector<T> &operator=(const Vector<T> &V);
@@ -49,6 +51,23 @@ void Vector<T>::copyFrom(const T *A, Rank lo, Rank hi) {
     _elem = new T[_capacity];
     while (lo < hi)
         _elem[_size++] = A[lo++];
+}
+
+template<typename T>
+Vector<T> &Vector<T>::operator=(const Vector<T> &V) {
+    if (this == &V)
+        return *this;
+
+    if (this->_elem)
+        delete[] this->_elem;
+
+    copyFrom(V._elem, 0, V.size());
+    return *this;
+}
+
+template<typename T>
+void Vector<T>::expand() {
+
 }
 
 #endif //ALGORITHMS_VECTOR_HPP
