@@ -30,6 +30,8 @@ public:
     Rank size() const;
 
     Vector<T> &operator=(const Vector<T> &V);
+
+    T &operator[](Rank r) const;
 };
 
 template<typename T>
@@ -91,6 +93,12 @@ void Vector<T>::shrink() {
         _elem[i] = oldElem[i];
     delete[] oldElem;
 
+}
+
+
+template <typename T>
+T& Vector<T>::operator[](Rank r) const {
+    return _elem[r];
 }
 
 #endif //ALGORITHMS_VECTOR_HPP
