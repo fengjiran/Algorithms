@@ -5,6 +5,8 @@
 #ifndef ALGORITHMS_VECTOR_HPP
 #define ALGORITHMS_VECTOR_HPP
 
+#include <cstdlib>
+
 typedef int Rank;
 const int DEFAULT_CAPACITY = 3;
 
@@ -32,6 +34,8 @@ public:
     Vector<T> &operator=(const Vector<T> &V);
 
     T &operator[](Rank r) const;
+
+    void unsort(Rank lo, Rank hi);  // [lo, hi]
 };
 
 template<typename T>
@@ -96,9 +100,16 @@ void Vector<T>::shrink() {
 }
 
 
-template <typename T>
-T& Vector<T>::operator[](Rank r) const {
+template<typename T>
+T &Vector<T>::operator[](Rank r) const {
     return _elem[r];
+}
+
+template<typename T>
+void Vector<T>::unsort(Rank lo, Rank hi) {
+    T *v = _elem + lo;
+    for (Rank i = hi - lo; i > 0; i--)
+        swap(v[i - 1], v[rand() % i]);
 }
 
 #endif //ALGORITHMS_VECTOR_HPP
